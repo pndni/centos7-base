@@ -1,6 +1,7 @@
 FROM centos:7.6.1810
 
-RUN yum install -y wget file bc tar gzip libquadmath which bzip2 libgomp tcsh perl less vim zlib zlib-devel hostname
+RUN yum install -y epel-release
+RUN yum install -y wget file bc tar gzip libquadmath which bzip2 libgomp tcsh perl less vim zlib zlib-devel hostname Lmod libpng12 libmng
 RUN yum groupinstall -y "Development Tools"
 RUN wget https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0-Linux-x86_64.sh
 RUN mkdir -p /opt/cmake
@@ -9,4 +10,3 @@ RUN rm cmake-3.14.0-Linux-x86_64.sh
 
 LABEL Maintainer="Steven Tilley"
 LABEL Version=dev
-
